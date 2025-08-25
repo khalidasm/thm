@@ -1,0 +1,421 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Custom Font Face Declarations */
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-SemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-Thin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'IBM Plex Sans Arabic';
+    src: url('/fonts/IBMPlexSansArabic-Text.otf') format('opentype');
+    font-weight: 450;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+    --background: #161727;
+    --foreground: #ffffff;
+    --card: #161727;
+    --card-foreground: #ffffff;
+    --popover: #161727;
+    --popover-foreground: #ba6fde;
+    --primary: #161727;
+    --primary-foreground: #ba6fde;
+    --secondary: #ba6fde;
+    --secondary-foreground: #ffffff;
+    --muted: #ba6fde;
+    --muted-foreground: #6b7280;
+    --accent: #ba6fde;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #ffffff40;
+    --input: #161727;
+    --ring: #ba6fde;
+    --chart-1: #6366f1;
+    --chart-2: #4f46e5;
+    --chart-3: #4338ca;
+    --chart-4: #3730a3;
+    --chart-5: #312e81;
+    --sidebar: #f3f4f6;
+    --sidebar-foreground: #1e293b;
+    --sidebar-primary: #6366f1;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #e0e7ff;
+    --sidebar-accent-foreground: #374151;
+    --sidebar-border: #d1d5db;
+    --sidebar-ring: #6366f1;
+    --font-sans: 'IBM Plex Sans Arabic', Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: Merriweather, serif;
+    --font-mono: JetBrains Mono, monospace;
+    --radius: 0.5rem;
+    --shadow-2xs: 0px 2px 12px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 2px 12px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0px 2px 12px 0px hsl(0 0% 0% / 0.1),
+        0px 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow: 0px 2px 12px 0px hsl(0 0% 0% / 0.1),
+        0px 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md: 0px 2px 12px 0px hsl(0 0% 0% / 0.1),
+        0px 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0px 2px 12px 0px hsl(0 0% 0% / 0.1),
+        0px 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl: 0px 2px 12px 0px hsl(0 0% 0% / 0.1),
+        0px 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0px 2px 12px 0px hsl(0 0% 0% / 0.25);
+    --tracking-normal: 0.025em;
+    --spacing: 0.25rem;
+    --scrollbar-color: #404080;
+}
+
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-author-1: #E86491;
+    --color-author-2: #6DC086;
+    --color-author-3: #CF8163;
+    --color-author-4: #4DAEE8;
+    --color-author-5: #E3BD71;
+    --color-index:#C3DFEBcc;
+
+    --font-sans: var(--font-sans);
+    --font-mono: var(--font-mono);
+    --font-serif: var(--font-serif);
+
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+
+    --shadow-2xs: var(--shadow-2xs);
+    --shadow-xs: var(--shadow-xs);
+    --shadow-sm: var(--shadow-sm);
+    --shadow: var(--shadow);
+    --shadow-md: var(--shadow-md);
+    --shadow-lg: var(--shadow-lg);
+    --shadow-xl: var(--shadow-xl);
+    --shadow-2xl: var(--shadow-2xl);
+
+    --tracking-tighter: calc(var(--tracking-normal) - 0.05em);
+    --tracking-tight: calc(var(--tracking-normal) - 0.025em);
+    --tracking-normal: var(--tracking-normal);
+    --tracking-wide: calc(var(--tracking-normal) + 0.025em);
+    --tracking-wider: calc(var(--tracking-normal) + 0.05em);
+    --tracking-widest: calc(var(--tracking-normal) + 0.1em);
+
+    --scrollbar-color: var(--scrollbar-color);
+}
+
+body {
+    letter-spacing: var(--tracking-normal);
+}
+
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: var(--font-sans);
+        font-weight: 400;
+    }
+    
+    /* Typography with appropriate font weights */
+    h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-sans);
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    
+    h1 {
+        font-weight: 700;
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-weight: 600;
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-weight: 600;
+        font-size: 1.75rem;
+    }
+    
+    h4 {
+        font-weight: 500;
+        font-size: 1.5rem;
+    }
+    
+    h5 {
+        font-weight: 500;
+        font-size: 1.25rem;
+    }
+    
+    h6 {
+        font-weight: 500;
+        font-size: 1rem;
+    }
+    
+    p, span, div {
+        font-family: var(--font-sans);
+        font-weight: 400;
+        line-height: 1.6;
+    }
+    
+    /* Form elements */
+    input, textarea, select {
+        font-family: var(--font-sans);
+        font-weight: 400;
+    }
+    
+    input::placeholder, textarea::placeholder {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        color: var(--muted-foreground);
+    }
+    
+    /* Buttons */
+    button {
+        font-family: var(--font-sans);
+        font-weight: 500;
+    }
+    
+    /* Links */
+    a {
+        font-family: var(--font-sans);
+        font-weight: 400;
+    }
+    
+    /* Strong and bold text */
+    strong, b {
+        font-family: var(--font-sans);
+        font-weight: 600;
+    }
+    
+    /* Small text */
+    small {
+        font-family: var(--font-sans);
+        font-weight: 300;
+        font-size: 0.875rem;
+    }
+    
+    /* Labels */
+    label {
+        font-family: var(--font-sans);
+        font-weight: 500;
+    }
+    
+    /* Captions and secondary text */
+    .caption, .text-muted {
+        font-family: var(--font-sans);
+        font-weight: 300;
+    }
+    
+    /* Arabic text specific styling */
+    [lang="ar"], [dir="rtl"] {
+        font-family: var(--font-sans);
+        text-align: right;
+    }
+    
+    /* English text specific styling */
+    [lang="en"], [dir="ltr"] {
+        font-family: var(--font-sans);
+        text-align: left;
+    }
+}
+
+@layer utilities {
+    .line-clamp-1 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+    }
+
+    .line-clamp-2 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+    }
+
+    .line-clamp-3 {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .custom-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: #533E7D transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+        display: block;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: linear-gradient(to left bottom, #533E7D, #6B4080);
+        border-radius: 3px;
+        transition: all 0.2s ease;
+        min-height: 20px;
+    }
+
+    .custom-scrollbar:hover::-webkit-scrollbar-thumb {
+        background: linear-gradient(to left bottom, #6B4080, #533E7D);
+    }
+
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to left bottom, #7B5080, #6B4080);
+    }
+
+    .horizontal-scrollbar {
+        scrollbar-width: thin;
+        scrollbar-color: var(--scrollbar-color) transparent;
+    }
+
+    .horizontal-scrollbar::-webkit-scrollbar {
+        height: 4px;
+        width: 4px;
+        display: block;
+    }
+
+    .horizontal-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .horizontal-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-color);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+        min-width: 20px;
+    }
+
+    .horizontal-scrollbar:hover::-webkit-scrollbar {
+        height: 8px;
+        width: 8px;
+    }
+
+    .horizontal-scrollbar:hover::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-color);
+        border-radius: 4px;
+    }
+
+    .gradient-dropdown {
+        background: -webkit-linear-gradient(bottom left, var(--scrollbar-color), #6B4080);
+        background: -moz-linear-gradient(bottom left, var(--scrollbar-color), #6B4080);
+        background: -o-linear-gradient(bottom left, var(--scrollbar-color), #6B4080);
+        background: linear-gradient(to top right, var(--scrollbar-color), #6B4080);
+        position: absolute;
+        width: 200px;
+        z-index: 1000000;
+        padding: 5px;
+        -webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, .2), 0px 5px 5px hsla(237, 25%, 12%, 50%);
+        -moz-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, .2), 0px 5px 5px hsla(237, 25%, 12%, 50%);
+        box-shadow: inset 0px 1px 1px rgba(255, 255, 255, .2), 0px 5px 5px hsla(237, 25%, 12%, 50%);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+    }
+}

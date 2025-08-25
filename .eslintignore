@@ -1,0 +1,15 @@
+# Generated files
+src/generated/
+**/generated/
+node_modules/
+.next/
+dist/
+build/
+
+# Prisma generated files
+**/prisma/generated/
+**/node_modules/@prisma/client/
+
+# Build artifacts
+.vercel/
+out/ 
